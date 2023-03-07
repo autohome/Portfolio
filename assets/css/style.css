@@ -1,0 +1,31 @@
+:root {
+    --Background: white;
+    --primary: black;
+    --secondary: rgb(247, 211, 164);
+}
+
+body {
+
+background-color: var(--Background);
+color: var(--primary);
+}
+
+.nav {
+    border: 1px solid var(--secondary);
+    display: flex;
+    flex-direction: column;
+}
+
+.navlinks {
+    display: inline-block;
+}
+
+/* remove link decorations */
+a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.navlinks li {
+    display: inline;
+}
