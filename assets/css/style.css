@@ -4,50 +4,128 @@
     --secondary:  rgb(214, 211, 211);
 }
 
-body {
+*{
+    box-sizing: border-box;
+}
 
+body {
 background-color: var(--Background);
 color: var(--primary);
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+width: 100vh;
+height: 100vh;
+background-image: url(../images/pexels-karolina-grabowska-7185857.jpg);
+background-size: cover;
+
 }
 
-.nav {
-    /* border: 1px solid var(--secondary); */
-    display: flex;
-    flex-direction: column;
-}
 
-#logo {
-    font-size: 40px;
-    text-align: center;
-    padding: 10px;
-}
-
-.navlinks {
-    display: inline-block;
-    margin-bottom: 20px;
-    flex: 1 1 auto;
-    border-top: 1px solid var(--secondary);
-    border-bottom: 1px solid var(--secondary);
-    padding: 10px 0;
-}
-
-/* remove link decorations */
+/* removes link decorations */
 a {
     text-decoration: none;
     color: var(--primary);
 }
 
-.navlinks li {
-    display: inline;
-    padding: 5px;
-    font-size: 15px;
-    margin-left: 40px;
+/* this is flex container for nav */
+/* want only space between logo and .navlinks to shrink */
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
 }
 
-#headshot {
-    max-width: 250px;
-    border-radius: 8px;
-    margin: 10px;
-    
+/* get letter spacing to work */
+#logo {
+    font-size: 40px;
+    padding: 10px;
+    margin-left: 15px;
+    letter-spacing: 10;
 }
+
+/* need top margin */
+.navlinks {
+    margin-left: auto;
+    order: 2;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+nav a {
+    padding: 0 20px;
+}
+
+
+/* Start About Me */
+
+
+/* need to be in bottom left. does not shrink or grow */
+/* can put letter spacing? */
+#aboutme {
+    width: 400px;
+    letter-spacing: .2rem;
+    margin-left: 50px;
+    margin-bottom: 200px;
+    line-height: 2;
+    position: absolute;
+    bottom: 0;
+
+}
+
+
+/* card section */
+
+/* This is the flex container for the cards */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+#primarycard, .secondarycard  {
+    height: 400px;
+    /* width: 400px; */
+    background-color: aliceblue;
+    /* margin: auto; */
+    padding: 10px;
+    border-radius: 8px;
+    flex: 0 0 400px;
+    border: 1px solid var(--primary);
+
+}
+
+.secondarycard {
+    /* flex: 0 0 100px%; */
+    /* height: 35vh;
+    width: 35vh; */
+    /* background-color: blanchedalmond;
+    margin: auto;
+    padding: 10px;
+    justify-content: space-between;
+    border-radius: 8px;
+    flex: 0 0 400px; */
+}
+
+
+
+
+
+
+/* Start Footer */
+
+footer {
+    display: flex;
+    border: 1px solid var(--secondary);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer h2, footer p {
+    margin: 20px;
+
+}
+
+
