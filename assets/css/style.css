@@ -4,33 +4,21 @@
     --secondary:  rgb(214, 211, 211);
 }
 
-body {
+*{
+    box-sizing: border-box;
+}
 
+body {
 background-color: var(--Background);
 color: var(--primary);
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+width: 100vh;
+height: 100vh;
+background-image: url(../images/pexels-karolina-grabowska-7185857.jpg);
+background-size: cover;
+
 }
 
-.nav {
-    /* border: 1px solid var(--secondary); */
-    display: flex;
-    flex-direction: column;
-}
-
-#logo {
-    font-size: 40px;
-    text-align: center;
-    padding: 10px;
-}
-
-.navlinks {
-    display: inline-block;
-    margin-bottom: 20px;
-    flex: 1 1 auto;
-    border-top: 1px solid var(--secondary);
-    border-bottom: 1px solid var(--secondary);
-    padding: 10px 0;
-}
 
 /* remove link decorations */
 a {
@@ -38,16 +26,145 @@ a {
     color: var(--primary);
 }
 
+/* this is flex container for nav */
+.nav {
+    /* border: 1px solid var(--secondary); */
+    display: flex;
+    flex-direction: column;
+}
+
+#logo, .navlinks{
+    display: inline-block;
+}
+
+#logo {
+    font-size: 40px;
+    /* text-align: center; */
+    padding: 10px;
+    /* display: inline-block; */
+    float: left;
+    margin-left: 15px;
+}
+
+.navlinks {
+    /* display: inline-block; */
+    margin-bottom: 20px;
+    /* flex: 1 1 auto; */
+    border-top: 1px solid var(--secondary);
+    border-bottom: 1px solid var(--secondary);
+    padding: 10px 0;
+    width: 100vh;
+}
+
 .navlinks li {
-    display: inline;
+    display: inline-block;
     padding: 5px;
     font-size: 15px;
-    margin-left: 40px;
+    float: right;
 }
+
+/* add margin to .nav li */
+.navlinks li:nth-child(1){
+    margin-left: 15px;
+}
+
+/* Start About Me */
+
 
 #headshot {
     max-width: 250px;
     border-radius: 8px;
     margin: 10px;
+    box-shadow: -10px 10px 5px var(--secondary) ;
     
+}
+
+#aboutme {
+    width: 50%;
+    margin: auto;
+    flex: 1;
+}
+
+#aboutme ul {
+    display: flex;
+    /* border: 1px solid black; */
+}
+
+#aboutme li {
+    list-style: none;
+    
+}
+
+li:nth-child(1) {
+    flex: 0 1 25%;
+}
+li:nth-child(2) {
+    flex: 0 1 75%;
+    margin: auto; 
+}
+
+
+/* card section */
+
+/* This is the flex container for the cards */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+.cardholder{
+    flex: 4;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* margin-bottom: 80px; */
+    justify-content: center;
+}
+
+#primarycard, .secondarycard  {
+    height: 400px;
+    /* width: 400px; */
+    background-color: aliceblue;
+    /* margin: auto; */
+    padding: 10px;
+    border-radius: 8px;
+    flex: 0 0 400px;
+    border: 1px solid var(--primary);
+
+}
+
+.secondarycard {
+    /* flex: 0 0 100px%; */
+    /* height: 35vh;
+    width: 35vh; */
+    /* background-color: blanchedalmond;
+    margin: auto;
+    padding: 10px;
+    justify-content: space-between;
+    border-radius: 8px;
+    flex: 0 0 400px; */
+}
+
+
+
+
+
+
+/* Start Footer */
+
+footer {
+    display: flex;
+    border: 1px solid var(--secondary);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--Background);
+}
+
+footer h2, footer p {
+    margin: 20px;
+
 }
