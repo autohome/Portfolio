@@ -12,7 +12,7 @@ body {
 background-color: var(--Background);
 color: var(--primary);
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-width: 100vh;
+/* width: 100vh; */
 height: 100vh;
 background-image: url(../images/pexels-adrien-olichon-3137068.jpg);
 background-size: cover;
@@ -28,34 +28,52 @@ a {
 
 /* this is flex container for nav */
 /* want only space between logo and .navlinks to shrink */
-nav {
+header {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-
+    /* width: 100%; */
+    height: 100px;
+    align-items: baseline;
 }
 
 /* get letter spacing to work */
 #logo {
     font-size: 40px;
     padding: 10px;
-    margin-left: 15px;
+    margin-left: 40px;
     letter-spacing: 10;
+    margin-top: 15px;
+    /* flex: 1 1 auto */
 }
 
-/* need top margin */
-.navlinks {
-    margin-left: auto;
-    order: 2;
-    padding: 20px;
-    margin-top: 20px;
+nav{
+    flex: 1 1 auto;
+    text-align: right;
 }
 
 nav a {
     padding: 0 20px;
+    font-size: 20px;
+    /* text-shadow : horizontal-shadow vertical-shadow blur var(--secondary),horizontal-shadow vertical-shadow blur var(--secondary),horizontal-shadow vertical-shadow blur var(--secondary),horizontal-shadow vertical-shadow blur var(--secondary); */
+    text-shadow:2px 2px 1px #fff, 4px 4px 1px #ccc;
+}
+
+.glow{
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
 }
 
 
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
 /* Start About Me */
 
 
@@ -65,7 +83,7 @@ nav a {
     width: 400px;
     letter-spacing: .2rem;
     margin-left: 50px;
-    margin-bottom: 200px;
+    margin-bottom: 140px;
     line-height: 2;
     position: absolute;
     bottom: 0;
