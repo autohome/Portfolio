@@ -49,7 +49,6 @@ header {
     margin-left: 40px;
     letter-spacing: 10;
     margin-top: 15px;
-    /* flex: 1 1 auto */
 }
 
 nav{
@@ -62,6 +61,8 @@ nav a {
     font-size: 20px;
     text-shadow:2px 2px 2px #fff, 4px 4px 1px #ccc;
 }
+
+/* Adds glow effect to text */
 
 .glow{
     -webkit-animation: glow 1s ease-in-out infinite alternate;
@@ -170,6 +171,8 @@ main {
     background-repeat: no-repeat;
 }
 
+
+
 .headshotHolder{
     display: flex;
     justify-content: center;
@@ -224,12 +227,8 @@ footer h2, footer p {
 
 }
 
-@media screen and (max-width: 400px){
-    footer {
-        display: block;
-        position: relative;
-        font-size: 35px;
-}
+@media screen and (max-width: 400px) {
+
     #aboutme {
         margin-bottom: 0;
         top: 400px;
@@ -242,5 +241,10 @@ footer h2, footer p {
     nav {
         margin-top: 10px;
     }
+    footer {
+        display: block;
+        position: relative;
+        font-size: 35px;
+}
 }
 
