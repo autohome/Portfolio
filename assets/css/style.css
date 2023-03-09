@@ -8,14 +8,17 @@
     box-sizing: border-box;
 }
 
+/* NEED- add filter to BG image */
 body {
 background-color: var(--Background);
 color: var(--primary);
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-/* width: 100vh; */
+width: 100%;
 height: 100vh;
 background-image: url(../images/pexels-adrien-olichon-3137068.jpg);
 background-size: cover;
+background-repeat: no-repeat;
+padding-top: 1400px;
 
 }
 
@@ -27,16 +30,19 @@ a {
 }
 
 /* this is flex container for nav */
-/* want only space between logo and .navlinks to shrink */
+
 header {
     display: flex;
     justify-content: space-between;
-    /* width: 100%; */
+    width: 100%;
     height: 100px;
     align-items: baseline;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-/* get letter spacing to work */
+
 #logo {
     font-size: 40px;
     padding: 10px;
@@ -54,8 +60,7 @@ nav{
 nav a {
     padding: 0 20px;
     font-size: 20px;
-    /* text-shadow : horizontal-shadow vertical-shadow blur var(--secondary),horizontal-shadow vertical-shadow blur var(--secondary),horizontal-shadow vertical-shadow blur var(--secondary),horizontal-shadow vertical-shadow blur var(--secondary); */
-    text-shadow:2px 2px 1px #fff, 4px 4px 1px #ccc;
+    text-shadow:2px 2px 2px #fff, 4px 4px 1px #ccc;
 }
 
 .glow{
@@ -67,18 +72,18 @@ nav a {
 
 @-webkit-keyframes glow {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
     }
     
     to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
-  }
+}
+
 /* Start About Me */
 
 
-/* need to be in bottom left. does not shrink or grow */
-/* can put letter spacing? */
+
 #aboutme {
     width: 400px;
     letter-spacing: .2rem;
@@ -101,29 +106,37 @@ main {
     flex-direction: column;
 }
 
+.cardholder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
 
-#primarycard, .secondarycard  {
-    height: 400px;
-    /* width: 400px; */
+
+#primarycard {
+    height: 600px;
+    width: 600px;
     background-color: aliceblue;
     /* margin: auto; */
-    padding: 10px;
+    margin: 10px;
     border-radius: 8px;
-    flex: 0 0 400px;
+    /* flex: 0 0 75%; */
     border: 1px solid var(--primary);
 
 }
 
 .secondarycard {
-    /* flex: 0 0 100px%; */
-    /* height: 35vh;
-    width: 35vh; */
-    /* background-color: blanchedalmond;
-    margin: auto;
-    padding: 10px;
+    /* flex: 0 0 48%; */
+    height: 400px;
+    width: 400px;
+    background-color: blanchedalmond;
+    /* margin: auto; */
+    margin: 40px 10px;
     justify-content: space-between;
     border-radius: 8px;
-    flex: 0 0 400px; */
+    border: 1px solid var(--primary);
 }
 
 
@@ -139,6 +152,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    justify-content: center;
 }
 
 footer h2, footer p {
@@ -147,3 +161,28 @@ footer h2, footer p {
 }
 
 
+/* media Screen adjustments */
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, .3);
+        height: 120px;
+    }
+
+}
+
+@media screen and (max-width: 400px){
+    footer {
+        display: block;
+}
+    #aboutme {
+        margin-bottom: 0;
+        top: 800px;
+    }
+    nav a {
+        text-shadow: none;
+    }
+}
