@@ -91,7 +91,7 @@ nav a {
     margin-bottom: 140px;
     line-height: 2;
     position: absolute;
-    bottom: 0;
+    bottom: -30px;
 
 }
 
@@ -115,17 +115,43 @@ main {
 }
 
 
-#primarycard {
+#primarycard, #primarycard img {
     height: 600px;
     width: 600px;
-    background-color: aliceblue;
+    text-align: center;
+    /* background-color: aliceblue; */
     /* margin: auto; */
     margin: 10px;
     border-radius: 8px;
     /* flex: 0 0 75%; */
     border: 1px solid var(--primary);
-
+    overflow: hidden;
+    background: linear-gradient (rgb(198, 194, 194,.8), rgb(192,72,72,0.5)), url(../images/Horiseon_SS.png);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient( rgb(198, 194, 194,.8), rgb(192,72,72,0.5)), url(../images/Horiseon_SS.png); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+
+#Horiseon h2 {
+    font-size: 40px;
+}
+
+
+#Horiseon{
+    border: 1px solid black;
+    width: 200px;
+    margin: 20px 0;
+    position: relative;
+    bottom: -400px;
+    left: 10px;
+    background-color: rgb(15, 15, 15, .5);
+    border-radius: 8px;
+}
+
+#Horiseon h2 , #Horiseon p {
+    margin: 10px;
+} 
 
 .secondarycard {
     /* flex: 0 0 48%; */
@@ -137,9 +163,28 @@ main {
     justify-content: space-between;
     border-radius: 8px;
     border: 1px solid var(--primary);
+    overflow: hidden;
+    background: linear-gradient (rgb(198, 194, 194,.8), rgb(192,72,72,0.5)), url(../images/pexels-dominika-roseclay-912413.jpg);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient( rgb(198, 194, 194,.8), rgb(192,72,72,0.5)), url(../images/pexels-dominika-roseclay-912413.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+.headshotHolder{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 400px;
+}
 
+#headshot {
+    height: 500px;
+    width: 600px;
+    object-fit: scale-down;
+    /* margin: auto; */
+    border: 2px solid black;
+    text-align: center;
+
+}
 
 
 
@@ -177,12 +222,15 @@ footer h2, footer p {
 @media screen and (max-width: 400px){
     footer {
         display: block;
+        position: relative;
 }
     #aboutme {
         margin-bottom: 0;
         top: 800px;
+        font-size: 30px;
     }
     nav a {
         text-shadow: none;
+        font-size: 30px;
     }
 }
